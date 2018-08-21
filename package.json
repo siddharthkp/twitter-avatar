@@ -1,0 +1,27 @@
+{
+  "name": "twitter-avatar",
+  "version": "1.0.0",
+  "description": "Get twitter avatar for a username",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddharthkp/twitter-avatar.git"
+  },
+  "keywords": [
+    "twitter",
+    "avatar",
+    "api"
+  ],
+  "author": "siddharthkp",
+  "license": "MIT",
+  "homepage": "https://github.com/siddharthkp/twitter-avatar#readme",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.2",
+    "cors": "2.8.4",
+    "express": "4.16.3",
+    "request": "2.87.0"
+  }
+}
