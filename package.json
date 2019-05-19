@@ -20,8 +20,8 @@
   "homepage": "https://github.com/siddharthkp/twitter-avatar#readme",
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
-    "cors": "2.8.4",
-    "express": "4.16.4",
-    "request": "2.87.0"
+    "cors": "2.8.5",
+    "express": "4.17.0",
+    "request": "2.88.0"
   }
 }

@@ -31,6 +31,4 @@ app.get('/:user', async (req, res, next) => {
   request(result).pipe(res)
 })
 
-var listener = app.listen(3000, () => {
-  console.log('Your app is listening on port 3000')
-})
+module.exports = app
