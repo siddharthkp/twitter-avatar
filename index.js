@@ -50,12 +50,6 @@ app.get("/:user/mini", async (req, res, next) => {
   request(result).pipe(res);
 });
 
-app.get("/:user/mini", async (req, res, next) => {
-  const result = await get(req.params.user, "_bigger");
-  if (!result) return next(404);
-  request(result).pipe(res);
-});
-
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
 );
