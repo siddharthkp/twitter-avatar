@@ -132,3 +132,5 @@ typings/
 
 # Serverless directories
 .serverless
+
+.now
