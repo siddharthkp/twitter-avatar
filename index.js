@@ -6,20 +6,25 @@ const cors = require('cors')
 const app = express()
 app.use(cors())
 
-const cache = {}
+const cache = new Map();
 
 const get = username => {
   const url = 'https://mobile.twitter.com/' + username
   return new Promise((resolve, reject) => {
-    if (cache[username]) resolve(cache[username])
+    if (cache.has(username)) {
+      console.log('loaded image from cache..');
+      resolve(cache.get(username))
+    }
     else
       request(url, (error, res, body) => {
+        if (error) reject(error)
+
         const $ = cheerio.load(body)
         const url = ($('.avatar img').attr('src') || '').replace(
           '_normal',
           '_200x200'
         )
-        cache[username] = url
+        cache.set(username, url)
         resolve(url)
       })
   })

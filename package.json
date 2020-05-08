@@ -4,7 +4,8 @@
   "description": "Get twitter avatar for a username",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "now dev"
   },
   "repository": {
     "type": "git",
