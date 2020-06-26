@@ -26,28 +26,17 @@ const get = (username, size) => {
   });
 };
 
-app.get("/:user", async (req, res, next) => {
-  const result = await get(req.params.user, "_200x200");
-  if (!result) return next(404);
-  request(result).pipe(res);
-});
+const sizes = {
+  small: "_200x200",
+  big: "_400x400",
+  full: "",
+  mini: "_mini",
+};
 
-app.get("/:user/big", async (req, res, next) => {
-  const result = await get(req.params.user, "_400x400");
+app.get("/:user/:size?", async (req, res, next) => {
+  const result = await get(req.params.user, sizes[req.params.size || "small"]);
   if (!result) return next(404);
-  request(result).pipe(res);
-});
-
-app.get("/:user/full", async (req, res, next) => {
-  const result = await get(req.params.user, "");
-  if (!result) return next(404);
-  request(result).pipe(res);
-});
-
-app.get("/:user/mini", async (req, res, next) => {
-  const result = await get(req.params.user, "_mini");
-  if (!result) return next(404);
-  request(result).pipe(res);
+  res.status(301).redirect(result);
 });
 
 app.listen(port, () =>
