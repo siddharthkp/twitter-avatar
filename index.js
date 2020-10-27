@@ -28,25 +28,25 @@ const get = (username, size) => {
 
 app.get("/:user", async (req, res, next) => {
   const result = await get(req.params.user, "_200x200");
-  if (!result) return next(404);
+  if (!result) return res.status(404).send('Not Found');
   request(result).pipe(res);
 });
 
 app.get("/:user/big", async (req, res, next) => {
   const result = await get(req.params.user, "_400x400");
-  if (!result) return next(404);
+  if (!result) return res.status(404).send('Not Found');
   request(result).pipe(res);
 });
 
 app.get("/:user/full", async (req, res, next) => {
   const result = await get(req.params.user, "");
-  if (!result) return next(404);
+  if (!result) return res.status(404).send('Not Found');
   request(result).pipe(res);
 });
 
 app.get("/:user/mini", async (req, res, next) => {
   const result = await get(req.params.user, "_mini");
-  if (!result) return next(404);
+  if (!result) return res.status(404).send('Not Found');
   request(result).pipe(res);
 });
 
