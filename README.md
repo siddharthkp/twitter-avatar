@@ -10,11 +10,13 @@
 
 #### why?
 
-Twitter deprecated the public avatar API and now it's too much work to grab something that's publically visible ¯\_(ツ)_/¯
+Twitter deprecated the public avatar API and now it's too much work to grab something that's publically visible ¯\\_(ツ)_/¯
 
 #### usage
 
-URL [https://twitter-avatar.now.sh/{username}](https://twitter-avatar.now.sh/siddharthkp) returns a png
+Deploy this repo to [vercel](https://vercel.com/). 
+
+URL `https://your-deployment.vercel.app/{username}` returns a png
 
 &nbsp;
 
