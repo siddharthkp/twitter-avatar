@@ -23,7 +23,9 @@
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
     "express": "4.17.0",
-    "request": "2.88.0"
+    "nock": "13.0.5",
+    "request": "2.88.0",
+    "zombie": "6.1.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
